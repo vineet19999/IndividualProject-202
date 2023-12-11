@@ -11,13 +11,13 @@ The primary challenge is to devise a system for processing a CSV file containing
 
 ## Design Patterns:
 
--  Strategy Pattern: 
-  - Employed for credit card validation.
-  - Establish the CreditCardValidator interface with distinct implementations for various card types.
+Chain of Responsibility Design Pattern
+This pattern creates a chain of receiver objects for a request. This pattern decouples sender and receiver of a request based on the type of request.
 
--  Factory Method Pattern: 
-  - Employed to generate instances of credit card classes corresponding to the card issuer.
-  - Each credit card type (Visa, MasterCard, etc.) possesses its own factory method.
+Implementation Details:
+Main Credit Card Handler: Acts as a central point for processing files, delegating the validation task to specific credit card handlers (Visa, MasterCard, etc.).
+Each handler in the chain is responsible for certain validation criteria, creating a scalable and robust validation mechanism.
+
 
 ## Implications:
 
